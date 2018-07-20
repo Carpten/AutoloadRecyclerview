@@ -30,8 +30,9 @@ public abstract class AutoLoadAdapter extends RecyclerView.Adapter {
     }
 
     private void shouldLoad(RecyclerView recyclerView) {
-        if (((LinearLayoutManager) recyclerView.getLayoutManager())
-                .findLastVisibleItemPosition() >= getItemCount() - 5
+        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager != null && layoutManager instanceof LinearLayoutManager
+                && ((LinearLayoutManager) layoutManager).findLastVisibleItemPosition() >= getItemCount() - 5
                 && getItemCount() >= Page.EVERY_PAGE_COUNT) {
             if (mOnAutoLoadListener != null) {
                 mOnAutoLoadListener.autoLoad();
