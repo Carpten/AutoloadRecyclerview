@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="loadview_status">
+        <item>正常</item>
+        <item>加载中</item>
+        <item>加载失败</item>
+        <item>加载完成</item>
+    </array>
+</resources>
